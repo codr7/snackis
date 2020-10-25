@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jappkit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jappkit.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
