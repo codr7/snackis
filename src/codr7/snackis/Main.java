@@ -1,7 +1,10 @@
 package codr7.snackis;
 
+import codr7.jappkit.Repl;
 import codr7.jappkit.db.Tx;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.time.Instant;
 
@@ -22,5 +25,22 @@ public class Main {
         tx.commit();
 
         System.out.printf("%s\n%s\n", me.name, Profile.encodeKey(me.key()));
+
+        new Repl() {
+            @Override
+            protected String readLine(BufferedReader in, PrintStream out) throws IOException {
+                out.print("snacki$ ");
+                return super.readLine(in, out);
+            }
+
+            @Override
+            protected void processLine(String in, PrintStream out) {
+                var cmd = in.split("\\s+");
+
+                if (cmd[0].equals("c")) {
+                    out.println("Connect!");
+                }
+            }
+        }.run(new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8)), System.out);
     }
 }
