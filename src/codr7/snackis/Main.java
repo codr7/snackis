@@ -4,6 +4,8 @@ import codr7.jappkit.Repl;
 import codr7.jappkit.db.Tx;
 
 import java.io.*;
+import java.net.InetSocketAddress;
+import java.nio.channels.SocketChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.time.Instant;
@@ -38,7 +40,12 @@ public class Main {
                 var cmd = in.split("\\s+");
 
                 if (cmd[0].equals("c")) {
-                    out.println("Connect!");
+                    out.printf("Connecting to %s:%s...\n", cmd[1], cmd[2]);
+
+                    try {
+                        var s = SocketChannel.open();
+                        s.connect(new InetSocketAddress(cmd[1], Integer.valueOf(cmd[2])));
+                    } catch (IOException e) { out.println(e.getMessage()); }
                 }
             }
         }.run(new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8)), System.out);
