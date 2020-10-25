@@ -16,7 +16,8 @@ public class Main {
         var tx = new Tx();
         var me = new Profile(db);
         me.name = "Andreas Nilsson";
-        me.initKey();
+        var k = Profile.generateKey();
+        me.setKey(k.getPublic());
         me.store(tx);
         tx.commit();
 
