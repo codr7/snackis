@@ -1,0 +1,21 @@
+* Add sqlite
+* Add options table
+* Init database if new
+** Create key pair on init
+*** Ask for password
+**** Use to encrypt private key
+** Print public key on launch without args
+* Add decrypt command
+** Ask for password
+** Read from stdin until ctrl+d
+** Print decrypted
+* Add peers table
+** Name/public key
+** Add command to create peer
+** Read key from stdin until ctrl+d
+** Add list command to list peers with keys
+* Add encrypt command
+** Ask for optional peer
+*** Ask for key if empty
+** Read message from stdin until ctrl+d
+** Write hex to stdout
