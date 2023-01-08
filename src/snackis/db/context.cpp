@@ -12,7 +12,7 @@ namespace snackis::db {
     return nullopt;
   }
   
-  optional<Error> Context::execute(string sql) {
+  optional<Error> Context::execute(string sql) const {
     if (!db) { return Error("Context isn't open"); }
     if (sqlite3_exec(db, sql.c_str(), nullptr, 0, nullptr)) { return Error(sqlite3_errmsg(db)); }
     return nullopt;

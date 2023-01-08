@@ -6,7 +6,7 @@ namespace snackis::db {
   using namespace std;
   
   struct Table {
-    string name;
+    const string name;
 
     Table(string name);
     optional<Error> create(Context &context, bool force);

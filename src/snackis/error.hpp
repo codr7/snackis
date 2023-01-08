@@ -4,7 +4,7 @@ namespace snackis {
   using namespace std;
   
   struct Error {
-    string message;
+    const string message;
     Error(string message);
   };
 }

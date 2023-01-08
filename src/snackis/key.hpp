@@ -12,7 +12,7 @@ namespace snackis {
     unsigned char private_bin[PRIVATE_LEN];
 
     Key();
-    string public_hex();
-    string private_hex();
+    string public_hex() const;
+    string private_hex() const;
   };
 }

@@ -10,6 +10,6 @@ namespace snackis::db {
 
     Context();
     optional<Error> open(string path);
-    optional<Error> execute(string sql);
+    optional<Error> execute(string sql) const;
   };
 }
