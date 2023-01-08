@@ -1,4 +1,5 @@
-* Add sqlite
+* Finish Table::create
+** add columns
 * Add options table
 * Init database if new
 ** Create key pair on init
