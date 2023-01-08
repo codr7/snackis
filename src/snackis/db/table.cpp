@@ -12,7 +12,7 @@ namespace snackis::db {
     sql << '(';
     
     sql << ')';
-    if (auto e = context.execute(sql.str()); e) { return e; }
+    if (auto e = context.execute(sql.str()); e) { return Error("Failed creating table: ", e->message); }
     return nullopt;
   }
 }

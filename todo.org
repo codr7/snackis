@@ -1,5 +1,6 @@
 * Finish Table::create
 ** add columns
+*** add db::Column
 * Add options table
 * Init database if new
 ** Create key pair on init
