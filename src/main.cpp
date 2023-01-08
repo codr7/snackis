@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <iostream>
 #include "snackis/db/table.hpp"
 #include "snackis/lib.hpp"
@@ -5,6 +6,7 @@
 #include "snackis/utils.hpp"
 
 using namespace std;
+namespace fs = std::filesystem;
 namespace db = snackis::db;
 
 int main() {
@@ -16,9 +18,17 @@ int main() {
   cout << "Public Key:" << endl << k.public_hex() << endl;
   cout << "Private:" << endl << k.private_hex() << endl;
 
+  const string DB_PATH = "db";
+  
   db::Context c;
-  if (auto e = c.open("db"); e) { cout << "Failed opening database: " << e->message << endl; }
-  db::Table t("peers");
-  if (auto e = t.create(c, true); e) { cout << "Failed creating table: " << e->message << endl; }
+  if (auto e = c.open(DB_PATH); e) { cout << "Failed opening database: " << e->message << endl; }
+  db::Table t("options");
+
+  if (fs::exists(DB_PATH)) {
+    // Existing database
+  } else {
+    // New database
+  }
+
   return 0;
 }

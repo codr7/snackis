@@ -1,12 +1,11 @@
 * Finish Table::create
 ** add columns
 *** add db::Column
-* Add options table
-* Init database if new
-** Create key pair on init
-*** Ask for password
-**** Use to encrypt private key
-** Print public key on launch without args
+* Create/Sync db in main.cpp
+* Create key pair on db init
+** Ask for password
+*** Use to encrypt private key
+* Print public key & exist on launch without args
 * Add decrypt command
 ** Ask for password
 ** Read from stdin until ctrl+d
