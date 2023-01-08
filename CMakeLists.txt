@@ -4,7 +4,7 @@ project(snackis)
 
 set(CMAKE_CXX_COMPILER clang++)
 
-add_compile_options(-std=c++20 -stdlib=libc++ -Wall -Werror -O2 -g)
+add_compile_options(-std=c++20 -Wall -Werror -O2 -g)
 
 file(GLOB_RECURSE src src/snackis/*.cpp)
 
