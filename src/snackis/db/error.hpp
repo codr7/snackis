@@ -1,3 +1,6 @@
+#ifndef SNACKIS_DB_ERROR_HPP
+#define SNACKIS_DB_ERROR_HPP
+
 #include "snackis/error.hpp"
 
 namespace snackis::db {
@@ -8,3 +11,5 @@ namespace snackis::db {
     Error(Args &&...args): snackis::Error(forward<Args>(args)...) {}
   };
 }
+
+#endif

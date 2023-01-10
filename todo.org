@@ -1,6 +1,4 @@
 * Finish Table::create
-** add columns
-*** add db::Column
 * Create/Sync db in main.cpp
 * Create key pair on db init
 ** Ask for password
@@ -20,3 +18,4 @@
 *** Ask for key if empty
 ** Read message from stdin until ctrl+d
 ** Write hex to stdout
+* add vm

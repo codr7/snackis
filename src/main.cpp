@@ -1,13 +1,14 @@
 #include <filesystem>
 #include <iostream>
-#include "snackis/db/table.hpp"
 #include "snackis/lib.hpp"
+#include "snackis/model/schema.hpp"
 #include "snackis/key.hpp"
 #include "snackis/utils.hpp"
 
 using namespace std;
 namespace fs = std::filesystem;
 namespace db = snackis::db;
+namespace model = snackis::model;
 
 int main() {
   cout << "Snackis v" << snackis::VERSION << endl << endl;
@@ -22,7 +23,7 @@ int main() {
   
   db::Context c;
   if (auto e = c.open(DB_PATH); e) { cout << "Failed opening database: " << e->message << endl; }
-  db::Table t("options");
+  model::Schema schema;
 
   if (fs::exists(DB_PATH)) {
     // Existing database

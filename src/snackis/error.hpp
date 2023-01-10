@@ -1,3 +1,6 @@
+#ifndef SNACKIS_ERROR_HPP
+#define SNACKIS_ERROR_HPP
+
 #include <string>
 #include "snackis/utils.hpp"
 
@@ -11,3 +14,5 @@ namespace snackis {
     Error(Args &&...args): message(format(forward<Args>(args)...)) {}
   };
 }
+
+#endif
