@@ -11,13 +11,16 @@ namespace snackis::db {
   using namespace std;
 
   struct Column;
+  struct Schema;
   
   struct Table {
     const string name;
     vector<Column *> columns;
     
-    Table(string name);
+    Table(Schema &schema, string name);
     optional<Error> create(Context &context, bool force);
+    optional<Error> drop(Context &context, bool force);
+    optional<Error> sync(Context &context);
   };
 }
 

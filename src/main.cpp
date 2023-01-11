@@ -26,9 +26,9 @@ int main() {
   model::Schema schema;
 
   if (fs::exists(DB_PATH)) {
-    // Existing database
+    schema.sync(c);
   } else {
-    // New database
+    schema.create(c, true);
   }
 
   return 0;

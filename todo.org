@@ -1,5 +1,8 @@
-* Finish Table::create
-* Create/Sync db in main.cpp
+* add TypeColumn template
+** move get
+** add set
+* Add table primary key
+** Add key type
 * Create key pair on db init
 ** Ask for password
 *** Use to encrypt private key

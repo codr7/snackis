@@ -10,6 +10,7 @@ namespace snackis::db {
   
   struct TextColumn: Column {
     TextColumn(Table &table, string name);
+    virtual string columnType() const override;
     string get(const vector<any> &source) const;
   };
 }

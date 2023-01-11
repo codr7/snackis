@@ -5,10 +5,10 @@ namespace snackis::db {
 
   template <typename RecordT>
   struct RecordTable: Table {
-    RecordTable(string name);
+    RecordTable(Schema &schema, string name);
   };
 
   
   template <typename RecordT>
-  RecordTable<RecordT>::RecordTable(string name): Table(name) {}
+  RecordTable<RecordT>::RecordTable(Schema &schema, string name): Table(schema, name) {}
 }
